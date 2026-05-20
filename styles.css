@@ -24,7 +24,8 @@
   --touch: clamp(2.1rem, 7vmin, 2.95rem);
   --blur-orb: clamp(40px, 8vmin, 88px);
   /* Gap between email field and Subscribe when side-by-side */
-  --form-split-gap: clamp(0.5rem, 2.2vmin, 0.875rem);
+  --form-split-gap: clamp(0.35rem, 1.6vmin, 0.875rem);
+  --form-max: min(100%, clamp(14.5rem, 78vw, 24rem));
   --grid-size: clamp(28px, 5vmin, 52px);
   --grid-line: rgba(26, 26, 26, 0.055);
 }
@@ -272,39 +273,23 @@ body {
 .form {
   margin-top: 0;
   width: 100%;
-  max-width: min(100%, 24rem);
+  max-width: var(--form-max);
+  margin-inline: auto;
   animation: fade-in-up 0.85s ease-out 0.35s both;
 }
 
 .form__row {
   display: flex;
-  flex-direction: column;
-  gap: var(--gap-sm);
-}
-
-@media (min-width: 520px) {
-  .form__row {
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: center;
-    gap: var(--form-split-gap);
-  }
-
-  .form__input {
-    flex: 1 1 9.5rem;
-    max-width: 15rem;
-    border-radius: var(--radius);
-    border-right: 1px solid var(--input-border);
-  }
-
-  .form__btn {
-    border-radius: var(--radius);
-    flex-shrink: 0;
-  }
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  gap: var(--form-split-gap);
 }
 
 .form__input {
-  flex: 1;
+  flex: 1 1 6.5rem;
+  min-width: 0;
+  max-width: 11.5rem;
   min-height: var(--touch);
   padding: 0 clamp(0.9rem, 3.2vmin, 1.35rem);
   border: 1px solid var(--input-border);
@@ -330,8 +315,9 @@ body {
 }
 
 .form__btn {
+  flex-shrink: 0;
   min-height: var(--touch);
-  padding: 0 clamp(1rem, 4vmin, 1.85rem);
+  padding: 0 clamp(0.75rem, 3vmin, 1.85rem);
   border: none;
   border-radius: var(--radius);
   background: var(--charcoal);
@@ -363,6 +349,17 @@ body {
 .form__btn:disabled:hover {
   background: var(--charcoal);
   box-shadow: none;
+}
+
+@media (min-width: 520px) {
+  .form__input {
+    flex: 1 1 9.5rem;
+    max-width: 15rem;
+  }
+
+  .form__btn {
+    padding: 0 clamp(1rem, 4vmin, 1.85rem);
+  }
 }
 
 .form__message {
