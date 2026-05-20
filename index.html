@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Adess — coming soon. Get notified at launch." />
+    <title>Adess — Coming Soon</title>
+    <link rel="icon" type="image/png" href="./images/favicon.png" />
+    <!--
+      Deploy on Vercel:
+      1. Push this repo to GitHub/GitLab/Bitbucket.
+      2. New Vercel Project → import the repo → set Root Directory to: coming-soon-site
+      3. Framework Preset: Other (static). Deploy.
+
+      Namecheap + Vercel:
+      1. Vercel → Project → Settings → Domains → add your domain.
+      2. Follow Vercel’s DNS instructions. Common: apex → A record to Vercel; www → CNAME to cname.vercel-dns.com
+      3. In Namecheap: Domain → Advanced DNS → add those records (or use Namecheap DNS templates Vercel shows).
+
+      Logo: add your file as coming-soon-site/images/logo.png (or change paths in script.js).
+      Favicon: put favicon.png in coming-soon-site/images/ (same folder as logo). For .ico, use images/favicon.ico and set type="image/x-icon" on the link.
+      Instagram: set the link on the <a id="instagram-link" href="..."> in index.html, or set ADESS.instagramUrl in script.js (non-empty) to override.
+
+      Firebase: copy firebase-config.example.js → firebase-config.js and add your web app config. See FIREBASE.md.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=17" />
+  </head>
+  <body>
+    <main class="page">
+      <div class="page__bg" aria-hidden="true"></div>
+
+      <div class="page__inner">
+        <section class="hero">
+          <div class="logo-block">
+            <img
+              id="site-logo"
+              class="logo-block__img logo-block__img--pending"
+              src="./images/logo.png"
+              alt="Adess"
+              decoding="async"
+            />
+            <h1 id="site-wordmark" class="logo-block__wordmark">Adess</h1>
+          </div>
+
+          <p class="eyebrow eyebrow--hero">Coming soon</p>
+          <p class="lede">Something Classic is Coming</p>
+
+          <form id="subscribe-form" class="form" novalidate>
+            <div class="form__row">
+              <label class="sr-only" for="email">Email address</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                class="form__input"
+                placeholder="Your Email"
+              />
+              <button type="submit" class="form__btn">Subscribe</button>
+            </div>
+            <p id="form-message" class="form__message" role="status" hidden></p>
+          </form>
+        </section>
+
+        <div class="social">
+          <p class="eyebrow eyebrow--tight">Follow us</p>
+          <a
+            id="instagram-link"
+            class="social__link"
+            href="https://www.instagram.com/adess.coo"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Adess on Instagram"
+          >
+            <svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.25" />
+              <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.25" />
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+            </svg>
+          </a>
+        </div>
+
+        <footer class="footer">
+          <p class="footer__copy">&copy; <span id="year"></span> Adess. All rights reserved.</p>
+        </footer>
+      </div>
+    </main>
+    <script src="./firebase-config.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
+    <script src="./script.js" defer></script>
+  </body>
+</html>
