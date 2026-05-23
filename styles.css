@@ -22,10 +22,12 @@
   --gap-lg: clamp(0.4rem, 2.3vmin, 1.15rem);
   --radius: clamp(11px, 1.85vmin, 18px);
   --touch: clamp(2.1rem, 7vmin, 2.95rem);
+  --form-touch: clamp(2.4rem, 8vmin, 3.15rem);
+  --form-radius: clamp(12px, 2vmin, 20px);
   --blur-orb: clamp(40px, 8vmin, 88px);
   /* Gap between email field and Subscribe when side-by-side */
   --form-split-gap: clamp(0.35rem, 1.6vmin, 0.875rem);
-  --form-max: min(100%, clamp(14.5rem, 78vw, 24rem));
+  --form-max: min(100%, clamp(15.5rem, 84vw, 26rem));
   --grid-size: clamp(28px, 5vmin, 52px);
   --grid-line: rgba(26, 26, 26, 0.055);
 }
@@ -155,10 +157,10 @@ body {
 .logo-block__img {
   display: block;
   margin: 0 auto;
-  width: clamp(6.5rem, 41vmin, 13rem);
+  width: clamp(7.25rem, 45vmin, 14.5rem);
   max-width: 100%;
   height: auto;
-  max-height: clamp(2.5rem, 14vmin, 5.5rem);
+  max-height: clamp(2.85rem, 15.5vmin, 6.25rem);
   object-fit: contain;
 }
 
@@ -170,7 +172,7 @@ body {
 .logo-block__wordmark {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   font-weight: 700;
-  font-size: clamp(1.5rem, calc(5vmin + 0.5rem), 2.85rem);
+  font-size: clamp(1.65rem, calc(5.5vmin + 0.55rem), 3.1rem);
   letter-spacing: clamp(0.04em, calc(0.8vmin + 0.03em), 0.08em);
 }
 
@@ -295,16 +297,16 @@ body {
 }
 
 .form__input {
-  flex: 1 1 6.5rem;
+  flex: 1 1 7rem;
   min-width: 0;
-  max-width: 11.5rem;
-  min-height: var(--touch);
-  padding: 0 clamp(0.9rem, 3.2vmin, 1.35rem);
+  max-width: 12.75rem;
+  min-height: var(--form-touch);
+  padding: 0 clamp(1rem, 3.5vmin, 1.45rem);
   border: 1px solid var(--input-border);
-  border-radius: var(--radius);
+  border-radius: var(--form-radius);
   background: var(--input-bg);
   font: inherit;
-  font-size: clamp(0.85rem, calc(1vmin + 0.72rem), 0.98rem);
+  font-size: clamp(0.9rem, calc(1.1vmin + 0.74rem), 1.02rem);
   color: var(--charcoal);
   outline: none;
   box-shadow: 0 1px 3px rgba(26, 26, 26, 0.08);
@@ -324,14 +326,14 @@ body {
 
 .form__btn {
   flex-shrink: 0;
-  min-height: var(--touch);
-  padding: 0 clamp(0.75rem, 3vmin, 1.85rem);
+  min-height: var(--form-touch);
+  padding: 0 clamp(0.85rem, 3.4vmin, 1.95rem);
   border: none;
-  border-radius: var(--radius);
+  border-radius: var(--form-radius);
   background: var(--charcoal);
   color: #fff;
   font: inherit;
-  font-size: clamp(0.68rem, calc(0.88vmin + 0.58rem), 0.84rem);
+  font-size: clamp(0.72rem, calc(0.95vmin + 0.6rem), 0.88rem);
   font-weight: 600;
   letter-spacing: clamp(0.06em, calc(0.45vmin + 0.04em), 0.12em);
   text-transform: uppercase;
@@ -361,12 +363,12 @@ body {
 
 @media (min-width: 520px) {
   .form__input {
-    flex: 1 1 9.5rem;
-    max-width: 15rem;
+    flex: 1 1 10rem;
+    max-width: 16.25rem;
   }
 
   .form__btn {
-    padding: 0 clamp(1rem, 4vmin, 1.85rem);
+    padding: 0 clamp(1.1rem, 4.2vmin, 2rem);
   }
 }
 
