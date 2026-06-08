@@ -1,17 +1,21 @@
 /* Typography: Cormorant Garamond site-wide; weights and fluid sizes unchanged per element */
 
-/* Adess palette — aligned with main site */
+/* Adess palette — dark theme */
 :root {
-  --charcoal: #1a1a1a;
-  --charcoal-muted: rgba(26, 26, 26, 0.65);
-  --charcoal-soft: rgba(26, 26, 26, 0.45);
-  --charcoal-border: rgba(26, 26, 26, 0.15);
-  --input-border: rgba(26, 26, 26, 0.32);
-  --surface: #fff5e5;
-  --input-bg: #ffffff;
-  --success: #166534;
-  --notice: #a16207;
-  --error: #991b1b;
+  --charcoal: #fff5e5;
+  --charcoal-muted: rgba(255, 245, 229, 0.65);
+  --charcoal-soft: rgba(255, 245, 229, 0.45);
+  --charcoal-border: rgba(255, 245, 229, 0.15);
+  --input-border: rgba(255, 245, 229, 0.28);
+  --surface: #1a1a1a;
+  --surface-elevated: #262626;
+  --btn-bg: #fff5e5;
+  --btn-text: #1a1a1a;
+  --btn-hover: #ebe3d5;
+  --input-bg: #262626;
+  --success: #4ade80;
+  --notice: #fbbf24;
+  --error: #f87171;
 
   /* Fluid layout — vmin ties width + height so short screens still fit without scroll */
   --content-max: min(92vw, 37rem);
@@ -29,7 +33,7 @@
   --form-split-gap: clamp(0.35rem, 1.6vmin, 0.875rem);
   --form-max: min(100%, clamp(15.5rem, 84vw, 26rem));
   --grid-size: clamp(28px, 5vmin, 52px);
-  --grid-line: rgba(26, 26, 26, 0.055);
+  --grid-line: rgba(255, 245, 229, 0.06);
 }
 
 *,
@@ -44,6 +48,7 @@ html {
   scroll-behavior: smooth;
   height: 100%;
   overflow: hidden;
+  color-scheme: dark;
 }
 
 body {
@@ -91,9 +96,9 @@ body {
   background-image:
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
-    radial-gradient(ellipse 130% 70% at 50% -15%, rgba(212, 196, 168, 0.14), transparent 58%),
-    radial-gradient(ellipse 85% 55% at 100% 35%, rgba(245, 241, 234, 0.45), transparent 52%),
-    radial-gradient(ellipse 75% 50% at 0% 85%, rgba(235, 227, 213, 0.22), transparent 50%);
+    radial-gradient(ellipse 130% 70% at 50% -15%, rgba(212, 196, 168, 0.08), transparent 58%),
+    radial-gradient(ellipse 85% 55% at 100% 35%, rgba(255, 245, 229, 0.06), transparent 52%),
+    radial-gradient(ellipse 75% 50% at 0% 85%, rgba(212, 196, 168, 0.05), transparent 50%);
   background-size:
     var(--grid-size) var(--grid-size),
     var(--grid-size) var(--grid-size),
@@ -110,7 +115,7 @@ body {
   border-radius: 50%;
   filter: blur(var(--blur-orb));
   opacity: 0.4;
-  background: rgba(26, 26, 26, 0.05);
+  background: rgba(255, 245, 229, 0.04);
 }
 
 .page__bg::before {
@@ -236,8 +241,8 @@ body {
   background: linear-gradient(
     to right,
     transparent,
-    rgba(26, 26, 26, 0.45) 35%,
-    rgba(26, 26, 26, 0.45) 65%,
+    rgba(255, 245, 229, 0.4) 35%,
+    rgba(255, 245, 229, 0.4) 65%,
     transparent
   );
 }
@@ -266,7 +271,7 @@ body {
 }
 
 .headline__muted {
-  color: rgba(26, 26, 26, 0.9);
+  color: rgba(255, 245, 229, 0.85);
 }
 
 .lede {
@@ -309,19 +314,19 @@ body {
   font-size: clamp(0.9rem, calc(1.1vmin + 0.74rem), 1.02rem);
   color: var(--charcoal);
   outline: none;
-  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   transition: box-shadow 0.2s, border-color 0.2s;
 }
 
 .form__input::placeholder {
-  color: rgba(26, 26, 26, 0.5);
+  color: rgba(255, 245, 229, 0.4);
 }
 
 .form__input:focus {
-  border-color: rgba(26, 26, 26, 0.45);
+  border-color: rgba(255, 245, 229, 0.45);
   box-shadow:
-    0 1px 3px rgba(26, 26, 26, 0.08),
-    0 0 0 clamp(2px, 0.6vw, 3px) rgba(26, 26, 26, 0.1);
+    0 1px 3px rgba(0, 0, 0, 0.25),
+    0 0 0 clamp(2px, 0.6vw, 3px) rgba(255, 245, 229, 0.12);
 }
 
 .form__btn {
@@ -330,8 +335,8 @@ body {
   padding: 0 clamp(0.85rem, 3.4vmin, 1.95rem);
   border: none;
   border-radius: var(--form-radius);
-  background: var(--charcoal);
-  color: #fff;
+  background: var(--btn-bg);
+  color: var(--btn-text);
   font: inherit;
   font-size: clamp(0.72rem, calc(0.95vmin + 0.6rem), 0.88rem);
   font-weight: 600;
@@ -342,8 +347,8 @@ body {
 }
 
 .form__btn:hover {
-  background: #111;
-  box-shadow: 0 clamp(4px, 1.2vw, 8px) clamp(16px, 4vw, 24px) rgba(0, 0, 0, 0.12);
+  background: var(--btn-hover);
+  box-shadow: 0 clamp(4px, 1.2vw, 8px) clamp(16px, 4vw, 24px) rgba(0, 0, 0, 0.35);
 }
 
 .form__btn:active {
@@ -357,7 +362,7 @@ body {
 }
 
 .form__btn:disabled:hover {
-  background: var(--charcoal);
+  background: var(--btn-bg);
   box-shadow: none;
 }
 
@@ -415,19 +420,19 @@ body {
   justify-content: center;
   width: var(--touch);
   height: var(--touch);
-  border: 1px solid rgba(26, 26, 26, 0.35);
+  border: 1px solid rgba(255, 245, 229, 0.3);
   border-radius: 50%;
-  background: #ffffff;
+  background: var(--surface-elevated);
   color: var(--charcoal);
   text-decoration: none;
-  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
 .social__link:hover {
   transform: scale(1.08);
-  border-color: rgba(26, 26, 26, 0.5);
-  box-shadow: 0 2px 8px rgba(26, 26, 26, 0.12);
+  border-color: rgba(255, 245, 229, 0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .social__icon {
